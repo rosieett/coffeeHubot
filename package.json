@@ -1,9 +1,9 @@
 {
-  "name": "coffeeBot",
+  "name": "coffeebot",
   "version": "1.0.0",
   "private": true,
   "author": "rosieett <rosie.ett@gmail.com>",
-  "description": "a bot to help you order or figure out your coffee order",
+  "description": "coffee ordering bot that helps you figure out your order or to simply take your order",
   "dependencies": {
     "hubot": "^3.3.2",
     "hubot-diagnostics": "^1.0.0",
