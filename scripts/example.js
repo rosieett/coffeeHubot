@@ -17,15 +17,28 @@ module.exports = (robot) => {
       if (order == "coffee"){
         return msg.send("Sure! What size?");
       } else if (order == "latte") {
+
           return msg.send("What kind of milk?");
+
+          robot.hear(/whole milk (.*)/i, function(msg) {
+            var milk;
+            milk = msg.match[1];
+              if (milk == "whole milk"){
+                return msg.send("Whole milk - you got it! What size?");
+              } 
+
       } else if (order == "iced coffee") {
           return msg.send("Sure! What size?");
       } else if (order == "cappuchino") {
           return msg.send("What kind of milk?");
       } else {
-        return msg.reply("I\m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
+        return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
 
+  })
+
+  robot.hear(/I'd like to order/, function(res) {
+    return res.send('Great! What would you like to order?');
   })
 
   robot.hear(/Coffee Order Help/, function(res) {
