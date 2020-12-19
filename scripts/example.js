@@ -13,30 +13,35 @@ module.exports = (robot) => {
 
   robot.hear(/Can I order a (.*)/i, function(msg) {
     var noMilk;
+    var withMilk;
+    withMilk = msg.match[1];
     noMilk = msg.match[1];
       if (noMilk == "coffee"){
           return msg.send("Sure! What size?");
       } else if (noMilk == "iced coffee") {
           return msg.send("Sure! What size?");
+      } else if (withMilk == "cappuchino") {
+          return msg.send("What kind of milk?");
+      } else if (withMilk == "latte") {
+          return msg.send("What kind of milk?");
       } else {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
-
-  })
-
-  robot.hear(/Can I order a (.*)/i, function(msg) {
-    var withMilk;
-    withMilk = msg.match[1];
-      if (withMilk == "latte") {
-        return msg.send("What kind of milk?");
-      } else if (withMilk == "cappuchino") {
-          return msg.send("What kind of milk?");
-      } else {
-                return msg.reply("Nope");
-        // return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
-      }
-
-  })
+    })
+  // 
+  // robot.hear(/Can I order a (.*)/i, function(msg) {
+  //   var withMilk;
+  //   withMilk = msg.match[1];
+  //     if (withMilk == "latte") {
+  //       return msg.send("What kind of milk?");
+  //     } else if (withMilk == "cappuchino") {
+  //         return msg.send("What kind of milk?");
+  //     } else {
+  //               return msg.reply("Nope");
+  //       // return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
+  //     }
+  //
+  // })
 
   robot.hear(/milk (.*)/, function(msg) {
     var milk;
