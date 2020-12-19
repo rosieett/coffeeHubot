@@ -28,20 +28,10 @@ module.exports = (robot) => {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
     })
-  // 
-  // robot.hear(/Can I order a (.*)/i, function(msg) {
-  //   var withMilk;
-  //   withMilk = msg.match[1];
-  //     if (withMilk == "latte") {
-  //       return msg.send("What kind of milk?");
-  //     } else if (withMilk == "cappuchino") {
-  //         return msg.send("What kind of milk?");
-  //     } else {
-  //               return msg.reply("Nope");
-  //       // return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
-  //     }
-  //
-  // })
+
+    robot.hear(/large/, function(res) {
+      return res.send("Great! I\'ll have your large" + noMilk + " ready shortly");
+    })
 
   robot.hear(/milk (.*)/, function(msg) {
     var milk;
