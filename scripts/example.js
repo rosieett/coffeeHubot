@@ -15,7 +15,7 @@ module.exports = (robot) => {
     var coffee;
     coffee = msg.match[1];
       if (order == "coffee"){
-        return msg.send("Sure! What size?");
+          return msg.send("Sure! What size?");
       } else if (order == "iced coffee") {
           return msg.send("Sure! What size?");
       } else {
@@ -37,13 +37,35 @@ module.exports = (robot) => {
 
   })
 
-  robot.hear(/milk/, function(res) {
-    var milk;
-    milk = msg.match[1];
-    if (order == "whole milk") {
-      return msg.send("Great I\'ll have your " + withMilk + "with " + milk);
-    }
-  })
+  bot.hear(/milk (.*)/, function(msg) {
+  var milk;
+  milk = msg.match[1];
+  console.log(milk);
+  switch (milk) {
+    case "whole milk":
+      return msg.reply("whole milk, got it!");
+      break;
+    case "oat milk":
+      return msg.reply("oat milk, got it!");
+      break;
+    case "almond milk":
+      return msg.reply("almond milk, got it!");
+      break;
+    case "skim milk":
+        return msg.reply("skim milk, got it!");
+        break;
+    default:
+      return msg.reply("We have whole, skim, almond, or oat milk.");
+  }
+});
+
+  // robot.hear(/milk/, function(res) {
+  //   var milk;
+  //   milk = msg.match[1];
+  //   if (order == "whole milk") {
+  //     return msg.send("Great I\'ll have your " + withMilk + "with " + milk);
+  //   }
+  // })
 
   // robot.hear(/whole milk/, function(res) {
   //   return res.send("Great I\'ll have your " + withMilk + "with ");
