@@ -32,7 +32,8 @@ module.exports = (robot) => {
       } else if (withMilk == "cappuchino") {
           return msg.send("What kind of milk?");
       } else {
-        return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
+                return msg.reply("Nope");
+        // return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
 
   })
