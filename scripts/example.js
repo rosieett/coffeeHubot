@@ -18,12 +18,12 @@ module.exports = (robot) => {
         return msg.send("Sure! What size?");
       } else if (order == "latte") {
 
-          var milk;
-          return msg.send("What kind of milk?");
-          console.log(milk);
-          milk = msg.match[1];
-          if (milk == "whole milk"){
-            return msg.send("Whole milk - you got it! What size?");
+          // var milk;
+          // return msg.send("What kind of milk?");
+          // console.log(milk);
+          // milk = msg.match[1];
+          // if (milk == "whole milk"){
+          //   return msg.send("Whole milk - you got it! What size?");
 
       } else if (order == "iced coffee") {
           return msg.send("Sure! What size?");
