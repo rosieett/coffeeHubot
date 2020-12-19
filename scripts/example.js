@@ -57,7 +57,7 @@ module.exports = (robot) => {
       default:
         return msg.reply("We have whole, skim, almond, or oat milk.");
     }
-  });
+  })
 
   // robot.hear(/milk/, function(res) {
   //   var milk;
