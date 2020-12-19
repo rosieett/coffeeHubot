@@ -14,9 +14,9 @@ module.exports = (robot) => {
   robot.hear(/Can I order a (.*)/i, function(msg) {
     var coffee;
     coffee = msg.match[1];
-      if (order == "coffee"){
+      if (coffee == "coffee"){
           return msg.send("Sure! What size?");
-      } else if (order == "iced coffee") {
+      } else if (coffee == "iced coffee") {
           return msg.send("Sure! What size?");
       } else {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
@@ -27,38 +27,38 @@ module.exports = (robot) => {
   robot.hear(/Can I order a (.*)/i, function(msg) {
     var withMilk;
     withMilk = msg.match[1];
-      if (order == "latte") {
+      if (withMilk == "latte") {
         return msg.send("What kind of milk?");
-      } else if (order == "cappuchino") {
+      } else if (withMilk == "cappuchino") {
           return msg.send("What kind of milk?");
       } else {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
 
   })
-  //
-  // robot.hear(/milk (.*)/, function(msg) {
-  //   var milk;
-  //   milk = msg.match[1];
-  //   console.log(milk);
-  //   switch (milk) {
-  //     case "whole milk":
-  //       return msg.reply("whole milk, got it!");
-  //       break;
-  //     case "oat milk":
-  //       return msg.reply("oat milk, got it!");
-  //       break;
-  //     case "almond milk":
-  //       return msg.reply("almond milk, got it!");
-  //       break;
-  //     case "skim milk":
-  //         return msg.reply("skim milk, got it!");
-  //         break;
-  //     default:
-  //       return msg.reply("We have whole, skim, almond, or oat milk.");
-  //   }
-  // })
 
+  robot.hear(/milk (.*)/, function(msg) {
+    var milk;
+    milk = msg.match[1];
+    console.log(milk);
+    switch (milk) {
+      case "whole milk":
+        return msg.reply("whole milk, got it!");
+        break;
+      case "oat milk":
+        return msg.reply("oat milk, got it!");
+        break;
+      case "almond milk":
+        return msg.reply("almond milk, got it!");
+        break;
+      case "skim milk":
+          return msg.reply("skim milk, got it!");
+          break;
+      default:
+        return msg.reply("We have whole, skim, almond, or oat milk.");
+    }
+  })
+  // 
   // robot.hear(/milk/, function(res) {
   //   var milk;
   //   milk = msg.match[1];
