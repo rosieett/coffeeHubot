@@ -12,11 +12,11 @@ module.exports = (robot) => {
 
 
   robot.hear(/Can I order a (.*)/i, function(msg) {
-    var coffee;
-    coffee = msg.match[1];
-      if (coffee == "coffee"){
+    var noMilk;
+    noMilk = msg.match[1];
+      if (noMilk == "coffee"){
           return msg.send("Sure! What size?");
-      } else if (coffee == "iced coffee") {
+      } else if (noMilk == "iced coffee") {
           return msg.send("Sure! What size?");
       } else {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
@@ -58,7 +58,7 @@ module.exports = (robot) => {
         return msg.reply("We have whole, skim, almond, or oat milk.");
     }
   })
-  // 
+  //
   // robot.hear(/milk/, function(res) {
   //   var milk;
   //   milk = msg.match[1];
