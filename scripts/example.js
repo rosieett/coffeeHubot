@@ -14,8 +14,6 @@ module.exports = (robot) => {
   robot.hear(/Can I order a (.*)/i, function(msg) {
     var noMilk;
     var withMilk;
-    withMilk = msg.match[1];
-    noMilk = msg.match[1];
       if (noMilk == "coffee"){
           return msg.send("Sure! What size?");
       } else if (noMilk == "iced coffee") {
@@ -30,7 +28,7 @@ module.exports = (robot) => {
     })
 
     robot.hear(/large/, function(res) {
-      return res.send("Great! I\'ll have your large" + noMilk + " ready shortly");
+      return res.reply("Great! I\'ll have your large" + noMilk + " ready shortly");
     })
 
   robot.hear(/milk (.*)/, function(msg) {
