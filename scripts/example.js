@@ -11,20 +11,20 @@ module.exports = (robot) => {
   })
 
   //Telling the coffeebot your order step 1
-  robot.respond(/Can I order a (.*)/, function(msg) {
-    var order;
-    order = msg.match[1];
-    console.log(order);
-    if (order == "coffee") {
-        return msg.reply('Sure! A ' + order ' is a great idea!');
-      } else if (order == "iced coffee") {
-        return msg.reply('Are you sure? It\'s a little cold for an ' + order ' but no judgement');
-      } else if (order == "latte") {
-        return msg.reply('Yummy and warming. A ' + order 'is a great idea!');
-      } else {
-        return msg.reply('Sorry, we only have coffee, iced coffee, and lattes at this time');
-      }
-  })
+  // robot.respond(/Can I order a (.*)/, function(msg) {
+  //   var order;
+  //   order = msg.match[1];
+  //   console.log(order);
+  //   if (order == "coffee") {
+  //       return msg.reply('Sure! A ' + order ' is a great idea!');
+  //     } else if (order == "iced coffee") {
+  //       return msg.reply('Are you sure? It\'s a little cold for an ' + order ' but no judgement');
+  //     } else if (order == "latte") {
+  //       return msg.reply('Yummy and warming. A ' + order 'is a great idea!');
+  //     } else {
+  //       return msg.reply('Sorry, we only have coffee, iced coffee, and lattes at this time');
+  //     }
+  // })
 
   // Responding to the coffeebot's follow up questions in step 1
   robot.respond(/I'd like a (.*)/i, function(msg) {
