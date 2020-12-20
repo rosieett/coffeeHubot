@@ -43,10 +43,13 @@ module.exports = (robot) => {
   const sizes = ['large', 'medium', 'small']
   const milks = ['almond milk', 'oat milk', 'whole milk', 'skim milk']
 
-  robot.hear(/Coffee Order Help/, function(res) {
-    res.send(res.random(sizes + milks + drinks));
-  })
+  // robot.hear(/Coffee Order Help/, function(res) {
+  //   res.send(res.random(`You should get a ${sizes} ${milks} + ${drinks}`));
+  // })
 
+  robot.hear(/Order something for me/, (res) => {
+      res.send('You should get a ' + res.random(sizes) + ' ' + res.random(milks) +' ' + res.random(drinks))
+    })
 
 
 }
