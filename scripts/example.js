@@ -49,7 +49,7 @@ module.exports = (robot) => {
     });
 
     robot.respond(/large/, function(res) {
-      return msg.send("Great! I\'ll have your large" + order + " ready shortly");
+      return msg.send(`Great! I\'ll have your large ${order} ready shortly`);
     })
 
     // robot.respond(/large/, function(res) {
