@@ -11,20 +11,42 @@ module.exports = (robot) => {
   })
 
 
-  robot.hear(/Can I order a (.*)/i, function(msg) {
-    var order;
-      if (order == "coffee"){
-          return msg.send("Sure! What size?");
-      } else if (order == "iced coffee") {
-          return msg.send("Sure! What size?");
-      } else if (order == "cappuchino") {
-          return msg.send("What kind of milk?");
-      } else if (order == "latte") {
-          return msg.send("What kind of milk?");
-      } else {
-        return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
+  // robot.hear(/Can I order a (.*)/i, function(msg) {
+  //   var order;
+  //     if (order == "coffee"){
+  //         return msg.send("Sure! What size?");
+  //     } else if (order == "iced coffee") {
+  //         return msg.send("Sure! What size?");
+  //     } else if (order == "cappuchino") {
+  //         return msg.send("What kind of milk?");
+  //     } else if (order == "latte") {
+  //         return msg.send("What kind of milk?");
+  //     } else {
+  //       return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
+  //     }
+  //   })
+
+    robot.respond(/Can I order a (.*)/, function(msg) {
+      var order;
+      order = msg.match[1];
+      console.log(order);
+      switch (order) {
+        case "coffee":
+          return msg.reply("Sure! What size?");
+          break;
+        case "iced coffee":
+          return msg.reply("Sure! What size?");
+          break;
+        case "latte":
+          return msg.reply("What kind of milk?");
+          break;
+        case "cappuchino":
+          return msg.reply("What kind of milk?");
+          break;
+        default:
+          return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
       }
-    })
+    });
 
     // robot.respond(/large/, function(res) {
     //   return msg.send("Great! I\'ll have your large" + order + " ready shortly");
