@@ -44,7 +44,7 @@ module.exports = (robot) => {
   const milks = ['almond milk', 'oat milk', 'whole milk', 'skim milk']
 
   robot.hear(/Coffee Order Help/, function(res) {
-    res.send(res.random(size + milk + drinks));
+    res.send(res.random(sizes + milks + drinks));
   })
 
 
