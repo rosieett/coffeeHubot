@@ -20,22 +20,28 @@ module.exports = (robot) => {
         return msg.reply(`Are you sure? It\'s a little cold for an ${order} but no judgement`);
       } else if (order == "latte") {
         return msg.reply(`Yummy and warming. A ${order} is a great idea!`);
+      } else if (order == "tea") {
+        return msg.reply(`Great choice. ${order} is my afternoon staple.`);
       } else {
-        return msg.reply(`Sorry, we only have coffee, iced coffee, and lattes at this time`);
+        return msg.reply(`Sorry, we only have coffee, iced coffee, tea, and lattes at this time`);
       }
   })
 
   // Responding to the coffeebot's follow up questions in step 1
-  robot.respond(/I'd like a (.*)/i, function(msg) {
-    var size;
-    size = msg.match[1];
-    console.log(size);
-    if (size == "large"){
-      return msg.send("Great! I\'ll have your large" + order + " ready shortly");
-    } else if (size == "medium") {
-      return msg.reply("Great! I\'ll have your medium" + order + " ready shortly");
-    } else if (size == "small") {
-      return msg.reply("Great! I\'ll have your small" + order + " ready shortly");
+  robot.respond(/I'd like something (.*)/i, function(msg) {
+    var feeling;
+    feeling = msg.match[1];
+    console.log(feeling);
+    if (feeling == "cold"){
+      return msg.send("Great! I\'ll have your iced coffee ready shortly");
+    } else if (feeling == "milk based") {
+      return msg.reply("Sounds like a latte is what you need");
+    } else if (feeling == "floral") {
+      return msg.reply("I'd recommend a hibiscus tea");
+    } else if (feeling == "hot") {
+      return msg.reply("Coffee. Definitely coffee.");
+    } else {
+      return msg.reply(`Feeling ${feeling}? When in doubt, drink seltzer.`)
     }
   })
 
@@ -50,7 +56,7 @@ module.exports = (robot) => {
     })
 
     //Responding to whoever wants coffee
-    // robot.hear /tired/i, (res) => {
+    // robot.hear /tired/i, (res) =>
     //   room = "the-official-hubot-testing-org-for-ga-jsr-121"
     //   robot.messageRoom room, "If you're tired, why not order some coffee!"
     // }
