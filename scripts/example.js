@@ -32,9 +32,25 @@ module.exports = (robot) => {
       }
     })
 
+    robot.respond(/Can I order a (.*)/, function(msg) {
+      var order;
+      order = msg.match[2];
+      console.log(order);
+      if (order == "coffee") {
+          return msg.reply("Sure! What size?");
+        } else if (order == "iced coffee") {
+          return msg.reply("Sure! What size?");
+        } else if (order == "latte") {
+          return msg.reply("What kind of milk?");
+        } else if (order == "cappuchino") {
+          return msg.reply("What kind of milk?");
+        }
+    })
+
     robot.respond(/I'd like a (.*)/i, function(msg) {
       var size;
-      size = msg.match[1];
+      size = msg.match[3];
+      console.log(size);
       if (size == "large"){
         return msg.send("Great! I\'ll have your large" + order + " ready shortly");
       } else if (size == "medium") {
