@@ -27,7 +27,7 @@ module.exports = (robot) => {
       }
     })
 
-    robot.hear(/large/, function(res) {
+    robot.respond(/large/, function(res) {
       return msg.reply("Great! I\'ll have your large" + noMilk + " ready shortly");
     })
 
