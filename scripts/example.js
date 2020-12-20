@@ -45,10 +45,10 @@ robot.respond(/I'd like something (.*)/i, function(msg) {
   }
 })
 
-robot.respond(/What does your favorite coffee look like? (.*)/i, function (msg){
-  var image;
-  image =
-}
+// robot.respond(/What does your favorite coffee look like? (.*)/i, function (msg){
+//   var image;
+//   image =
+// }
 
 
 // Random task: having the bot randomly create a coffee order from the arrays below
@@ -61,15 +61,15 @@ robot.hear(/Order something for me/, (res) => {
 })
 
 // Responding to the room if someone is tired
-robot.hear(/I need some caffeine/i, function(res) {
-  room = "the-official-hubot-testing-org-for-ga-jsr-121", "coffeebot-ordering";
-  robot.messageRoom room("If you're tired, why not order some coffee!");
+robot.hear(/I need some caffeine/i, (res) {
+  room = "the-official-hubot-testing-org-for-ga-jsr-121";
+  return robot.messageRoom room("If you're tired, why not order some coffee!");
 })
 
 // Responding to the tired person specifically
-// robot.hear(/I seriously need coffee/i, function(res) {
-//   room = "the-official-hubot-testing-org-for-ga-jsr-121", "coffeebot-ordering";
-//   robot.messageRoom res.message.user.id, "I gotchu";
-// })
+  robot.hear(/Help I need some coffee/i, (res) => {
+  return res.send(robot.messageRoom(`rosie_ettenheim`, `I can help with that!`));
+        }
+    );
 
 }
