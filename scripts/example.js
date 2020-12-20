@@ -60,16 +60,16 @@ robot.hear(/Order something for me/, (res) => {
   res.send('You should get a ' + res.random(sizes) + ' ' + res.random(milks) + ' ' + res.random(drinks))
 })
 
-// Responding to the room if someone is tired
-robot.hear(/I need some caffeine/i, (res) {
-  room = "the-official-hubot-testing-org-for-ga-jsr-121";
-  return robot.messageRoom room("If you're tired, why not order some coffee!");
-})
+// // Responding to the room if someone is tired
+// robot.hear(/I need some caffeine/i, (res) {
+//   room = "the-official-hubot-testing-org-for-ga-jsr-121";
+//   return robot.messageRoom room("If you're tired, why not order some coffee!");
+// })
 
 // Responding to the tired person specifically
-  robot.hear(/Help I need some coffee/i, (res) => {
+  robot.respond(/Help I need some coffee/i, (res) => {
   return res.send(robot.messageRoom(`rosie_ettenheim`, `I can help with that!`));
         }
     );
 
-}
+};
