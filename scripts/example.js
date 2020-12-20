@@ -28,7 +28,9 @@ module.exports = (robot) => {
   // Responding to the coffeebot's follow up questions in step 1
   robot.respond(/I'd like a (.*)/i, function(msg) {
     var size;
+    console.log(msg);
     size = msg.match[2];
+    
     console.log(size);
     if (size == "large"){
       return msg.send("Great! I\'ll have your large" + order + " ready shortly");
