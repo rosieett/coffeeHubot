@@ -29,8 +29,8 @@ module.exports = (robot) => {
   robot.respond(/I'd like a (.*)/i, function(msg) {
     var size;
     console.log(msg);
-    size = msg.match[2];
-    
+    size = msg.match[1];
+
     console.log(size);
     if (size == "large"){
       return msg.send("Great! I\'ll have your large" + order + " ready shortly");
