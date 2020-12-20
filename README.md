@@ -12,6 +12,23 @@ available, etc!
 [hubot]: http://hubot.github.com
 [generator-hubot]: https://github.com/github/generator-hubot
 
+### Command the coffeebot
+
+The coffeebot is built to help recommend or decide a coffee order for you.
+
+If you're tired, tell the coffeebot! It will tell you what might help.
+
+Mentioning @hubot-2 and "can I order a" will wake up it's ordering function so you can order exactly what you want (as long as it's hot coffee, iced coffee, latte, or tea).
+
+If you don't know what you want but you know how you're feeling (for example: cold, floral, hot, etc), mentioning the coffeebot will help you find a drink per your feeling. Mention the hubot and then say "I'd like something..." and insert your feeling.
+
+Can't decide? Tell the coffeebot "Order something for me" and it'll randomly create a coffee order for you!
+
+
+
+
+
+
 ### Running coffeebot Locally
 
 You can test your hubot by running the following, however some plugins will not
