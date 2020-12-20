@@ -4,12 +4,12 @@
 
 module.exports = (robot) => {
 
-  //Respond to I'd like to figure out my coffee
-
+  //Beginning prompt to ordering coffee
   robot.hear(/I'd like to order/, function(res) {
     return res.send('Great! What would you like to order?');
   })
 
+  //Telling the coffeebot your order step 1
   robot.respond(/Can I order a (.*)/, function(msg) {
     var order;
     order = msg.match[1];
@@ -25,31 +25,31 @@ module.exports = (robot) => {
       }
   })
 
-  // robot.respond(/I'd like a (.*)/i, function(msg) {
-  //   var size;
-  //   size = msg.match[2];
-  //   console.log(size);
-  //   if (size == "large"){
-  //     return msg.send("Great! I\'ll have your large" + order + " ready shortly");
-  //   } else if (size == "medium") {
-  //     return msg.reply("Great! I\'ll have your medium" + order + " ready shortly");
-  //   } else if (size == "small") {
-  //     return msg.reply("Great! I\'ll have your small" + order + " ready shortly");
-  //   }
-  // })
+  // Responding to the coffeebot's follow up questions in step 1
+  robot.respond(/I'd like a (.*)/i, function(msg) {
+    var size;
+    size = msg.match[2];
+    console.log(size);
+    if (size == "large"){
+      return msg.send("Great! I\'ll have your large" + order + " ready shortly");
+    } else if (size == "medium") {
+      return msg.reply("Great! I\'ll have your medium" + order + " ready shortly");
+    } else if (size == "small") {
+      return msg.reply("Great! I\'ll have your small" + order + " ready shortly");
+    }
+  })
 
 
+  // Random task: having the bot randomly create a coffee order from the arrays below
   const drinks = ['coffee', 'iced coffee', 'latte', 'cappuchino']
   const sizes = ['large', 'medium', 'small']
   const milks = ['almond milk', 'oat milk', 'whole milk', 'skim milk']
-
-  // robot.hear(/Coffee Order Help/, function(res) {
-  //   res.send(res.random(`You should get a ${sizes} ${milks} + ${drinks}`));
-  // })
 
   robot.hear(/Order something for me/, (res) => {
       res.send('You should get a ' + res.random(sizes) + ' ' + res.random(milks) +' ' + res.random(drinks))
     })
 
+    // //Responding to whoever wants coffee
+    // robot.messageRoom(res.message.user.id, "I need coffee")
 
 }
