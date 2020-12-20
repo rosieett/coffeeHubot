@@ -15,14 +15,12 @@ module.exports = (robot) => {
     order = msg.match[1];
     console.log(order);
     if (order == "coffee") {
-        return msg.reply('Sure! A' + order 'is a great idea!');
+        return msg.reply('Sure! A ' + order ' is a great idea!');
       } else if (order == "iced coffee") {
-        return msg.reply("Sure! What size?");
+        return msg.reply('Are you sure? It\'s a little cold for an ' + order ' but no judgement');
       } else if (order == "latte") {
-        return msg.reply("What kind of milk?");
-      } else if (order == "cappuchino") {
-        return msg.reply("What kind of milk?");
-      }
+        return msg.reply('Yummy and warming. A ' + order 'is a great idea!');
+      } 
   })
 
   // Responding to the coffeebot's follow up questions in step 1
