@@ -58,7 +58,7 @@ robot.hear(/Order something for me/, (res) => {
 // Responding to the room if someone is tired
 robot.hear(/I'm tired/i, function(res) {
   room = "the-official-hubot-testing-org-for-ga-jsr-121", "coffeebot-ordering";
-  robot.messageRoom room, "If you're tired, why not order some coffee!";
+  robot.messageRoom room("If you're tired, why not order some coffee!");
 })
 
 //Responding to the tired person specifically
