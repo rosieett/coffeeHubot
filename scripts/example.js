@@ -20,6 +20,8 @@ module.exports = (robot) => {
         return msg.reply('Are you sure? It\'s a little cold for an ' + order ' but no judgement');
       } else if (order == "latte") {
         return msg.reply('Yummy and warming. A ' + order 'is a great idea!');
+      } else {
+        return msg.reply('Sorry, we only have coffee, iced coffee, and lattes at this time');
       }
   })
 
