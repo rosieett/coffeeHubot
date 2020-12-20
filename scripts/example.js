@@ -25,18 +25,18 @@ module.exports = (robot) => {
       }
   })
 
-  robot.respond(/I'd like a (.*)/i, function(msg) {
-    var size;
-    size = msg.match[2];
-    console.log(size);
-    if (size == "large"){
-      return msg.send("Great! I\'ll have your large" + order + " ready shortly");
-    } else if (size == "medium") {
-      return msg.reply("Great! I\'ll have your medium" + order + " ready shortly");
-    } else if (size == "small") {
-      return msg.reply("Great! I\'ll have your small" + order + " ready shortly");
-    }
-  })
+  // robot.respond(/I'd like a (.*)/i, function(msg) {
+  //   var size;
+  //   size = msg.match[2];
+  //   console.log(size);
+  //   if (size == "large"){
+  //     return msg.send("Great! I\'ll have your large" + order + " ready shortly");
+  //   } else if (size == "medium") {
+  //     return msg.reply("Great! I\'ll have your medium" + order + " ready shortly");
+  //   } else if (size == "small") {
+  //     return msg.reply("Great! I\'ll have your small" + order + " ready shortly");
+  //   }
+  // })
 
 
   const drinks = ['coffee', 'iced coffee', 'latte', 'cappuchino']
