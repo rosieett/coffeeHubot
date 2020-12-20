@@ -12,15 +12,14 @@ module.exports = (robot) => {
 
 
   robot.hear(/Can I order a (.*)/i, function(msg) {
-    var noMilk;
-    var withMilk;
-      if (noMilk == "coffee"){
+    var order;
+      if (order == "coffee"){
           return msg.send("Sure! What size?");
-      } else if (noMilk == "iced coffee") {
+      } else if (order == "iced coffee") {
           return msg.send("Sure! What size?");
-      } else if (withMilk == "cappuchino") {
+      } else if (order == "cappuchino") {
           return msg.send("What kind of milk?");
-      } else if (withMilk == "latte") {
+      } else if (order == "latte") {
           return msg.send("What kind of milk?");
       } else {
         return msg.reply("I\'m sorry, you can only order a coffee, latte, iced coffee, or cappuchino at this time.");
@@ -28,8 +27,12 @@ module.exports = (robot) => {
     })
 
     robot.respond(/large/, function(res) {
-      return msg.reply("Great! I\'ll have your large" + noMilk + " ready shortly");
+      return msg.send("Great! I\'ll have your large" + order + " ready shortly");
     })
+
+    // robot.respond(/large/, function(res) {
+    //   return msg.reply("Great! I\'ll have your large" + order + " ready shortly");
+    // })
 
   robot.hear(/milk (.*)/, function(msg) {
     var milk;
