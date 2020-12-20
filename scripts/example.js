@@ -20,7 +20,7 @@ module.exports = (robot) => {
         return msg.reply('Are you sure? It\'s a little cold for an ' + order ' but no judgement');
       } else if (order == "latte") {
         return msg.reply('Yummy and warming. A ' + order 'is a great idea!');
-      } 
+      }
   })
 
   // Responding to the coffeebot's follow up questions in step 1
@@ -48,10 +48,10 @@ module.exports = (robot) => {
     })
 
     //Responding to whoever wants coffee
-    robot.hear /tired/i, (res) => {
-      room = "the-official-hubot-testing-org-for-ga-jsr-121"
-      robot.messageRoom room, "If you're tired, why not order some coffee!"
-    }
+    // robot.hear /tired/i, (res) => {
+    //   room = "the-official-hubot-testing-org-for-ga-jsr-121"
+    //   robot.messageRoom room, "If you're tired, why not order some coffee!"
+    // }
 
 
 }
