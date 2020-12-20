@@ -7,7 +7,7 @@ module.exports = (robot) => {
   //Beginning prompt to ordering coffee
   robot.hear(/I'd like to order/, function(res) {
     return res.send('Great! What would you like to order?');
-    console.log(working?)
+    console.log('working?')
   })
 
   //Telling the coffeebot your order step 1
