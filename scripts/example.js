@@ -15,7 +15,7 @@ module.exports = (robot) => {
     order = msg.match[1];
     console.log(order);
     if (order == "coffee") {
-        return msg.reply("Sure! What size?");
+        return msg.reply('Sure! A' + order 'is a great idea!');
       } else if (order == "iced coffee") {
         return msg.reply("Sure! What size?");
       } else if (order == "latte") {
@@ -28,9 +28,7 @@ module.exports = (robot) => {
   // Responding to the coffeebot's follow up questions in step 1
   robot.respond(/I'd like a (.*)/i, function(msg) {
     var size;
-    console.log(msg);
     size = msg.match[1];
-
     console.log(size);
     if (size == "large"){
       return msg.send("Great! I\'ll have your large" + order + " ready shortly");
@@ -51,7 +49,11 @@ module.exports = (robot) => {
       res.send('You should get a ' + res.random(sizes) + ' ' + res.random(milks) +' ' + res.random(drinks))
     })
 
-    // //Responding to whoever wants coffee
-    // robot.messageRoom(res.message.user.id, "I need coffee")
+    //Responding to whoever wants coffee
+    robot.hear /tired/i, (res) => {
+      room = "the-official-hubot-testing-org-for-ga-jsr-121"
+      robot.messageRoom room, "If you're tired, why not order some coffee!"
+    }
+
 
 }
