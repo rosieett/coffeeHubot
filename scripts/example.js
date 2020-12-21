@@ -66,5 +66,4 @@ robot.hear(/I need some caffeine/i, (res) => {
       robot.messageRoom(res.message.user.id, `I can help you!`);
     })
 
-
 };
