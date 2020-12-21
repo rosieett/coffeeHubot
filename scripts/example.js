@@ -63,8 +63,9 @@ robot.hear(/Order something for me/, (res) => {
 // })
 
 // Responding to person who needs coffee
-  robot.respond(/I need some coffee now!/i, (res) => {
-    return robot.messageRoom(res.`rosie_ettenheim`, `I can help with that!`);
-  })
+  robot.respond(/Coffee! Now!/, (res) => {
+          return res.send(robot.messageRoom(`rosie_ettenheim`, `Okay!`));
+      }
+  )
 
 };
