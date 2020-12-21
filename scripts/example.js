@@ -57,10 +57,10 @@ robot.hear(/Order something for me/, (res) => {
 
 
 // Responding to the room if someone needs caffeine
-robot.hear(/I need some caffeine/i, (res) {
-  room = "the-official-hubot-testing-org-for-ga-jsr-121";
-  return robot.messageRoom("If you're tired, why not order some coffee!");
-})
+// robot.hear(/I need some caffeine/i, (res) {
+//   room = "the-official-hubot-testing-org-for-ga-jsr-121";
+//   return robot.messageRoom("If you're tired, why not order some coffee!");
+// })
 
 // Responding to person who needs coffee
   // robot.respond(/Help I need some coffee/i, (res) => {
