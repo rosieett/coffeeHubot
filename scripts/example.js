@@ -63,7 +63,7 @@ robot.hear(/Order something for me/, (res) => {
 // })
 
 // Responding to person who needs coffee
-  robot.hear(/Coffee! Now!/, (msg) => {
+  robot.hear(/Coffee! Now!/, (res) => {
       robot.messageRoom(res.message.user.id, `I can help you!`);
       }
   )
