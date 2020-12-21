@@ -63,9 +63,21 @@ robot.hear(/Order something for me/, (res) => {
 // })
 
 // Responding to person who needs coffee
-  robot.respond(/Coffee! Now!/, (msg) => {
-      return msg.send(robot.messageRoom(`rosie_ettenheim`, `I can help you!`));
+  robot.hear(/Coffee! Now!/, (msg) => {
+      robot.messageRoom(res.message.user.id, `I can help you!`);
       }
   )
+
+  // robot.hear(/badger/i, (res) => {
+  //   // this reveals all the data we have access to here
+  //   console.log('!!!!', res.message.user);
+  //   // res.message.user.id is the user id, res.message.user.room is the room
+  //   // this will send a direct message to the user that created the message
+  //   robot.messageRoom(res.message.user.id, `OMG this works`);
+  //   // this is the same as res.send, unless you specify a different slack channel than the one that the original message is made
+  //   // robot.messageRoom(res.message.room, `OMG this works`);
+  //   // this will send a message to the entire room the message is made it
+  //   res.send('Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS');
+  // })
 
 };
