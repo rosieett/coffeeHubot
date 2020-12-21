@@ -58,7 +58,7 @@ robot.hear(/Order something for me/, (res) => {
 
 // Responding to the room if someone needs caffeine
 robot.hear(/I need some caffeine/i, (res) {
-  return robot.messageRoom('test-coffeebot', "If you're tired, why not order some coffee!");
+  return robot.messageRoom(res.message.room, "If you're tired, why not order some coffee!");
 })
 
 // Responding to person who needs coffee
