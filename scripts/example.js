@@ -57,15 +57,14 @@ robot.hear(/Order something for me/, (res) => {
 
 
 // Responding to the room if someone needs caffeine
-robot.hear(/I need some caffeine/i, (res) {
+robot.hear(/I need some caffeine/i, (res) => {
   robot.messageRoom(res.message.room, "If you're tired, why not order some coffee!");
 })
 
 // Responding to person who needs coffee
   robot.hear(/Coffee! Now!/, (res) => {
       robot.messageRoom(res.message.user.id, `I can help you!`);
-      }
-  )
+    })
 
 
 };
