@@ -45,11 +45,6 @@ robot.respond(/I'd like something (.*)/i, function(msg) {
   }
 })
 
-// robot.respond(/What does your favorite coffee look like? (.*)/i, function (msg){
-//   var image;
-//   image =
-// }
-
 
 // Random task: having the bot randomly create a coffee order from the arrays below
 const drinks = ['coffee', 'iced coffee', 'latte', 'cappuchino']
@@ -60,16 +55,15 @@ robot.hear(/Order something for me/, (res) => {
   res.send('You should get a ' + res.random(sizes) + ' ' + res.random(milks) + ' ' + res.random(drinks))
 })
 
-// // Responding to the room if someone is tired
-// robot.hear(/I need some caffeine/i, (res) {
-//   room = "the-official-hubot-testing-org-for-ga-jsr-121";
-//   return robot.messageRoom room("If you're tired, why not order some coffee!");
-// })
+// Responding to the room if someone is tired
+robot.hear(/I need some caffeine/i, (res) {
+  room = "the-official-hubot-testing-org-for-ga-jsr-121";
+  return robot.messageRoom room("If you're tired, why not order some coffee!");
+})
 
 // Responding to the tired person specifically
   robot.respond(/Help I need some coffee/i, (res) => {
-  return res.send(robot.messageRoom(`rosie_ettenheim`, `I can help with that!`));
-        }
-    );
+    return res.send(robot.messageRoom(`rosie_ettenheim`, `I can help with that!`));
+  });
 
 };
