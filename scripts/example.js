@@ -57,10 +57,9 @@ robot.hear(/Order something for me/, (res) => {
 
 
 // Responding to the room if someone needs caffeine
-// robot.hear(/I need some caffeine/i, (res) {
-//   room = "the-official-hubot-testing-org-for-ga-jsr-121";
-//   return robot.messageRoom("If you're tired, why not order some coffee!");
-// })
+robot.hear(/I need some caffeine/i, (res) {
+  return robot.messageRoom('test-coffeebot', "If you're tired, why not order some coffee!");
+})
 
 // Responding to person who needs coffee
   robot.hear(/Coffee! Now!/, (res) => {
@@ -68,16 +67,5 @@ robot.hear(/Order something for me/, (res) => {
       }
   )
 
-  // robot.hear(/badger/i, (res) => {
-  //   // this reveals all the data we have access to here
-  //   console.log('!!!!', res.message.user);
-  //   // res.message.user.id is the user id, res.message.user.room is the room
-  //   // this will send a direct message to the user that created the message
-  //   robot.messageRoom(res.message.user.id, `OMG this works`);
-  //   // this is the same as res.send, unless you specify a different slack channel than the one that the original message is made
-  //   // robot.messageRoom(res.message.room, `OMG this works`);
-  //   // this will send a message to the entire room the message is made it
-  //   res.send('Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS');
-  // })
 
 };
