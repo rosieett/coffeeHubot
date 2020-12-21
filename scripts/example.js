@@ -65,6 +65,6 @@ robot.hear(/I need some caffeine/i, (res) {
 // Responding to person who needs coffee
   robot.respond(/Help I need some coffee/i, (res) => {
     return robot.send(robot.messageRoom(res.`@rosie_ettenheim`, `I can help with that!`));
-  });
+  })
 
 };
